@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from bson import json_util
 import json
 
@@ -27,15 +27,17 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/ceva', methods=['GET'])
+@cross_origin()
 @require_auth(None)
 def ceva():
-    return json_util.dumps(listaMeaDeFilme)
+    return json_util.dumps(listaMeaDeFilme), 201
 
 
-@app.route('/logout', methods=['POST'])
+@app.route('/altceva', methods=['GET'])
+@cross_origin()
 @require_auth(None)
-def logout():
-    return jsonify(listaMeaDeFilme), 201
+def altceva():
+    return jsonify({"macar un raspuns": True}), 201
 
 # Run the server
 if __name__ == '__main__':
