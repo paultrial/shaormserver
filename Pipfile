@@ -4,14 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pymongo = "*"
-flask = "==2.3.3"
-marshmallow = "*"
-flask-cors = "*"
+pymongo = "==4.10.1"
+flask = "==3.0.3"
+marshmallow = "==3.22.0"
+flask-cors = "==5.0.0"
 bcrypt = "*"
 python-jose-cryptodome = "*"
 pyjwt = "*"
 authlib = "*"
+blinker = "==1.8.2"
+click = "==8.1.7"
+colorama = "==0.4.6"
+dnspython = "==2.7.0"
+itsdangerous = "==2.2.0"
+jinja2 = "==3.1.4"
+markupsafe = "==3.0.1"
+packaging = "==24.1"
+werkzeug = "==3.0.4"
 
 [dev-packages]
 
