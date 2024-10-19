@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pymongo = "*"
+flask = "==2.3.3"
+marshmallow = "*"
+flask-cors = "*"
+bcrypt = "*"
+python-jose-cryptodome = "*"
+pyjwt = "*"
+authlib = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.0"
