@@ -26,12 +26,20 @@ listaMeaDeFilme = collection.find().limit(25)
 app = Flask(__name__)
 CORS(app)
 
+
+
+@app.route('/', methods=['GET'])
+def ceva():
+    response = "macar un raspuns"
+    return response
+    
+
 @app.route('/ceva', methods=['GET'])
 @cross_origin()
 @require_auth(None)
 def ceva():
     response = json_util.dumps(listaMeaDeFilme), 201
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    
     return response
 
 
@@ -40,7 +48,7 @@ def ceva():
 @require_auth(None)
 def altceva():
     response = jsonify({"macar un raspuns": True}), 201
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    
     return response
 
 # Run the server
