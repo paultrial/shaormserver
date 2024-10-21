@@ -27,11 +27,9 @@ app = Flask(__name__)
 CORS(app)
 
 
-
-@app.route('/', methods=['GET'])
-def base():
-    response = "macar un raspuns"
-    return response
+@app.route("/")
+def index():
+    return "<h1>Hello!</h1>"
     
 
 @app.route('/ceva', methods=['GET'])
@@ -50,12 +48,18 @@ def altceva():
     response = jsonify({"macar un raspuns": True}), 201
     return response
     
-port = int(os.environ.get("PORT", 8000))
+
+
+def create_app():
+   return app
+
 
 
 # Run the server
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=port)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
+
 
 # @app.errorhandler(AuthError)
 # def handle_auth_error(ex):
