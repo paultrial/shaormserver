@@ -29,7 +29,7 @@ CORS(app)
 
 
 @app.route('/', methods=['GET'])
-def ceva():
+def base():
     response = "macar un raspuns"
     return response
     
@@ -39,8 +39,8 @@ def ceva():
 @require_auth(None)
 def ceva():
     response = json_util.dumps(listaMeaDeFilme), 201
-    
     return response
+    
 
 
 @app.route('/altceva', methods=['GET'])
@@ -48,8 +48,8 @@ def ceva():
 @require_auth(None)
 def altceva():
     response = jsonify({"macar un raspuns": True}), 201
-    
     return response
+    
 
 # Run the server
 if __name__ == '__main__':
