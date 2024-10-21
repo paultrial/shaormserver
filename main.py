@@ -50,10 +50,12 @@ def altceva():
     response = jsonify({"macar un raspuns": True}), 201
     return response
     
+port = int(os.environ.get("PORT", 8000))
+
 
 # Run the server
 if __name__ == '__main__':
-    app.run(debug=True, port=10000)
+    app.run(debug=True, host="0.0.0.0", port=port)
 
 # @app.errorhandler(AuthError)
 # def handle_auth_error(ex):
