@@ -53,7 +53,7 @@ def altceva():
 
 # Run the server
 if __name__ == '__main__':
-    app.run(debug=True, port=8069)
+    app.run(debug=True, port=80)
 
 # @app.errorhandler(AuthError)
 # def handle_auth_error(ex):
