@@ -30,14 +30,18 @@ CORS(app)
 @cross_origin()
 @require_auth(None)
 def ceva():
-    return json_util.dumps(listaMeaDeFilme), 201
+    response = json_util.dumps(listaMeaDeFilme), 201
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route('/altceva', methods=['GET'])
 @cross_origin()
 @require_auth(None)
 def altceva():
-    return jsonify({"macar un raspuns": True}), 201
+    response = jsonify({"macar un raspuns": True}), 201
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 # Run the server
 if __name__ == '__main__':
